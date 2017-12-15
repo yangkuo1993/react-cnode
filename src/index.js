@@ -3,5 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import Router from './router/index'
-ReactDOM.render(<Router>1234444</Router>, document.getElementById('root'));
+import {Provider} from 'react-redux'
+import store from "./store/store";
+ReactDOM.render(
+    <Provider store={store}>
+        <Router></Router>
+    </Provider>
+    , document.getElementById('root'));
 registerServiceWorker();
