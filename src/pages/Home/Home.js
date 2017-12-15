@@ -15,7 +15,13 @@ export default class Home extends Component{
         import('./ModuleA')
             .then(({ moduleA }) => {
                 // Use moduleA
-                store.dispatch(action.fetchRequest(1234))
+                store.dispatch(action.fetchRequest({
+                    data: {
+                        page: 2,
+                        tab: 'ask',
+                        limit: 10
+                    }
+                }))
             })
             .catch(err => {
                 // Handle failure
