@@ -11,6 +11,7 @@
     "babel-loader": "7.1.2",
     "babel-preset-react-app": "^3.1.0",
     "babel-runtime": "6.26.0",
+    "bundle-loader": "^0.5.5",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
     "css-loader": "0.28.7",
@@ -83,10 +84,19 @@
       "node"
     ]
   },
+  "babel": {
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      ["import", { "libraryName": "antd-mobile", "style": "css" }]
+    ]
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
   "devDependencies": {
-    "babel-plugin-import": "^1.6.3"
+    "babel-plugin-import": "^1.6.3",
+    "babel-preset-es2015": "^6.24.1"
   }
 }

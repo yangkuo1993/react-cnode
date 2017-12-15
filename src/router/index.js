@@ -1,8 +1,9 @@
 import React from 'react'
 import {HashRouter  as Router, Route, Switch} from 'react-router-dom'
+import asyncComponent from './AsyncComponent/AsyncComponent'
 import Home from '../pages/Home/Home'
-import About from '../pages/About/About'
-import NoMatch from '../pages/NoMatch/NoMatch'
+const About = asyncComponent(() => import("../pages/About/About"));
+const NoMatch = asyncComponent(() => import("../pages/NoMatch/NoMatch"));
 const RouterMap = () => (
     <Router>
         <Switch>
