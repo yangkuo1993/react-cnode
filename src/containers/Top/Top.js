@@ -1,10 +1,10 @@
 import React,{Component} from 'react'
-import Header from '../../components/Header/Header'
+import Tabs from '../../components/Tabs/Tabs'
 export default class Top extends Component{
     render(){
         return(
             <div>
-                <Header></Header>
+                <Tabs></Tabs>
             </div>
         )
     }

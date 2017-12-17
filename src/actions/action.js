@@ -29,21 +29,15 @@ export const fetchEnding = (keywords, list) => ({
 export const fetchRequest = (keywords) => {
     return (dispatch) => {
         dispatch(fetchIng(keywords));
-        console.log(keywords)
-        return fetch(`https://cnodejs.org/api/v1/topics`, {
+        return fetch(`https://cnodejs.org`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
-            },
-            credentials: "same-origin",
-            params: JSON.stringify({
-                name: 'Hubot',
-                login: 'hubot',
-            })
+            }
         })
             .then(response => response.json())
             .then(json =>
-                dispatch(fetchEnding(...keywords, json))
+                dispatch(fetchEnding(keywords, json))
             ).catch((e) => console.log(e))
     }
 }
